@@ -36,6 +36,28 @@ Para representar o zero, há um registrador especial chamado `$zero`. Exemplo:
 ```asm 
 add $t0, $zero, $s0 # copia o valor de $s0 para $t0
 ```
+#### Tabela de syscall
+Service |	System Call Code	| Arguments	Result
+:--: | :--: | :--:
+print_int |	1 |	$a0 = integer	
+print_float |	2 |	$f12 = float	
+print_double |	3 |	$f12 = double	
+print_string |	4 |	$a0 = string	
+read_int |	5	|	integer (in $v0)
+read_float |	6	|	float (in $f0)
+read_double |	7	|	double (in $f0)
+read_string |	8 |	$a0 = buffer, $a1 = length	
+sbrk |	9 |	$a0 = amount	address (in $v0)
+exit | 10		
+print_character | 11 | $a0 = character	
+read_character | 12 | character (in $v0)
+open | 13 | $a0 = filename,	file descriptor (in $v0) ; $a1 = flags, $a2 = mode	
+read | 14 | $a0 = file descriptor,	bytes read (in $v0) ; $a1 = buffer, $a2 = count	
+write | 15 | $a0 = file descriptor,	bytes written (in $v0) ; $a1 = buffer, $a2 = count	
+close | 16 | $a0 = file descriptor	0 (in $v0)
+exit2 | 17 | $a0 = value
+
+
 ### Instruções imediatas
 São variações de algumas instruções, terminando o mnemônico com 'i', que trabalha com dois registradores e uma constante, nessa ordem. Exemplo:
 ```asm
