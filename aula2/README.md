@@ -54,7 +54,7 @@ read_character | 12 | | character (in $v0)
 open | 13 | $a0 = filename, $a1 = flags, $a2 = mode | file descriptor (in $v0)	
 read | 14 | $a0 = file descriptor, $a1 = buffer, $a2 = count | bytes read (in $v0)	
 write | 15 | $a0 = file descriptor, $a1 = buffer, $a2 = count | bytes written (in $v0)	
-close | 16 | $a0 = file descriptor	0 (in $v0) | 
+close | 16 | $a0 = file descriptor |	0 (in $v0) 
 exit2 | 17 | $a0 = value |
 
 
