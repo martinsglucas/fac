@@ -1,4 +1,4 @@
-## Arquitetura de um computador
+# Arquitetura de um computador
 Compreende um projeto estrutural de um computador, ou seja, componentes lógicos que determinam seu funcionamento  
 Um sistema computacional atualmente compreende três camadas:
 * **Camada externa**: Software de aplicação
@@ -17,7 +17,7 @@ CISC (Complex Instructio Set Computer) possui centenas de instruções em seu co
  Projeto | centrado no software; programar mais | centrado no hardware
  Execução | executa direto no hardware com uso de controladora | a instrução é traduzida por um microprograma que pode consumir vários ciclos do processador
 
-## Linguagem de montagem (assembly)
+# Linguagem de montagem (assembly)
 Arquitetura MIPS 32 bits  
 Simulador SPIM
 ```bash
@@ -27,7 +27,7 @@ Para instalar o SPIM no linux, digite no terminal:
 ```bash
 apt install spim
 ```
-### Operações Aritméticas
+## Operações Aritméticas
 ```asm
 add a,b,c # a = b + c
 ```
