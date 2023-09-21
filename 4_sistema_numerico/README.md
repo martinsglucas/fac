@@ -1,3 +1,4 @@
+[Voltar à página inicial](https://github.com/W4RT1N5/fac#glossário)
 # Sistema numérico
 **Posicional:**
 Nosso sistema numérico é posicional. Exemplo
