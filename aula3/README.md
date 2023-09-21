@@ -3,6 +3,7 @@ Quando os dados não cabem nos registradores, o precessador acessa a memória pr
 Só existem duas requisições que o processador faz para a memória:
 * (processador) ->leitura-> (memória)
 * (processador) ->escrita-> (memória)
+* ![](requisicao_memoria.png)
 # Instruções de acesso à memória
 
 | | Memória Principal |
@@ -46,7 +47,7 @@ g em `$s0`, h em `$s1` e endereço base de A em `$s2`
 *Obs: o endereço base é o onde começa o dado. Nesse exemplo o endereço base aponta para o A[0]*  
 
 Primeiro precisamos carregar o valor de A[8] para depois realizar a soma
-```mips
+```asm
 lw $t0, 32($s2) # 32 = 4*8 (deslocamento)
 add $s0,$s1,$t0 # g = h + A[8]
 ```
@@ -62,13 +63,13 @@ int main(){
 }
 ```
 A solução fica:
-```mips
+```asm
 lw $t0, 32($s2) # 32 = 4*8 (deslocamento)
 add $s0,$s1,$t0 # s0 = h + A[8]
 sw $s0, 48($s2)
 ```
 Outra solução (economizando registradores) é:
-```mips
+```asm
 lw $t0, 32($s2) # 32 = 4*8 (deslocamento)
 add $t0,$s1,$t0 # s0 = h + A[8]
 sw $t0, 48($s2)
