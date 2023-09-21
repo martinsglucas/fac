@@ -1,9 +1,7 @@
 O processador tem 32 registradores, 18 deles livres para uso
 Quando os dados não cabem nos registradores, o precessador acessa a memória principal (e a memória principal fica responsável por gerenciar as outras memórias/ unidades - cash, disco, etc)
-Só existem duas requisições que o processador faz para a memória:
-* (processador) ->leitura-> (memória)
-* (processador) ->escrita-> (memória)
-* ![](requisicao_memoria.png)
+Só existem duas requisições que o processador faz para a memória:  
+<img src="requisicao_memoria.png" width="200" height="200">
 # Instruções de acesso à memória
 
 | | Memória Principal |
