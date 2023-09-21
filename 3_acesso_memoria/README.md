@@ -1,7 +1,9 @@
+[Voltar à página inicial](https://github.com/W4RT1N5/fac#glossário)
+# Antes
 O processador tem 32 registradores, 18 deles livres para uso
 Quando os dados não cabem nos registradores, o precessador acessa a memória principal (e a memória principal fica responsável por gerenciar as outras memórias/ unidades - cash, disco, etc)
 Só existem duas requisições que o processador faz para a memória:  
-<div style="text-align: center;">
+<div align="center">
     <img src="requisicao_memoria.png" width="200" height="200">
 </div>
 <!--<div align="center">
