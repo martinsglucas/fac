@@ -1,8 +1,16 @@
 O processador tem 32 registradores, 18 deles livres para uso
 Quando os dados não cabem nos registradores, o precessador acessa a memória principal (e a memória principal fica responsável por gerenciar as outras memórias/ unidades - cash, disco, etc)
 Só existem duas requisições que o processador faz para a memória:  
-<img src="requisicao_memoria.png" width="200" height="200">
+<div style="text-align: center;">
+    <img src="requisicao_memoria.png" width="200" height="200">
+</div>
+<!--<div align="center">
+    <img src="requisicao_memoria.png" width="200" height="200">
+</div> -->
+
 # Instruções de acesso à memória
+
+<div align="center">
 
 | | Memória Principal |
 | :--:| :--: |
@@ -12,6 +20,8 @@ Só existem duas requisições que o processador faz para a memória:
 | 2 | |
 | 1 | |
 | 0 | |
+</div>
+
 
 Cada célula tem um 1 byte. Um inteiro, por exemplo, que tem 4 bytes, ocupa 4 células <strike>e o endereço de memória desse número aponta sempre para o início do inteiro</strike>
 

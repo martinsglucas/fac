@@ -1,11 +1,11 @@
-## Arquitera de um computador
+## Arquitetura de um computador
 Compreende um projeto estrutural de um computador, ou seja, componentes lógicos que determinam seu funcionamento  
 Um sistema computacional atualmente compreende três camadas:
 * **Camada externa**: Software de aplicação
 * **Camada intermediária**: Software de sistemas
 * **Camada interna**: Hardware
-
-<img src="fases_codigo.png" alt="Aplicação > Linguagem alto nível > Linguagem de montagem > Linguagem de máquina" width="400" height="400">
+<div align="center">
+<img src="fases_codigo.png" alt="Aplicação > Linguagem alto nível > Linguagem de montagem > Linguagem de máquina" width="400" height="400"></div>
 
 A arquiterura de um computador, definida nas suas instruções, é chamada Arquiterura do Conjunto de Instruções (ISA). O ISA pode ser classificado como RISC ou CISC
 RISC (Reduced Instruction Set Computer) possui poucas instruções, simples e no mesmo padrão
