@@ -12,10 +12,10 @@ O mesmo símbolo possui valores distintos a depender da posição que ocupa
 Quantidade de símbolos para representação 
 
 Considerando o número  
-$X = X_{n-1}X_{n-2}...X_{2}X_{1}X_{0}$
+$X = X_{n-1}X_{n-2} \cdots X_{2}X_{1}X_{0}$
 
 Considerando uma base b:  
-$X = X_{n-1} * b^{n-1} + X_{n-2} * b^{n-2} + ... + X_{2} * b^2 + X_{1} * b^1 + X_{0} * b^0$
+$X = X_{n-1} * b^{n-1} + X_{n-2} * b^{n-2} + \cdots + X_{2} * b^2 + X_{1} * b^1 + X_{0} * b^0$
 
 <!--$\forall x \in X, \quad \exists y \leq \epsilon$-->
 
@@ -43,7 +43,7 @@ Relembrar outras formas de representação de números com sinal, em particular:
 ## Números sem sinal (unsigned int)
 menor: 00000...000  
 maior: 11111...111  
-$2^0 + 2^1 + ... + 2^{31}$
+$2^0 + 2^1 + \cdots + 2^{31}$
 * A representação com 32 bits vai de 0 a $2^{32} - 1$
 <!--
 $$
