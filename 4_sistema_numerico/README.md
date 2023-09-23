@@ -12,13 +12,16 @@ O mesmo símbolo possui valores distintos a depender da posição que ocupa
 Quantidade de símbolos para representação 
 
 Considerando o número  
-X = Xn-1 Xn-2 ... X2 X1 X0
+$X = X_{n-1}X_{n-2}...X_{2}X_{1}X_{0}$
 
 Considerando uma base b:  
-X = Xn-1 * b^(n-1) + Xn-2 * b^(n-2) + ... + X2 * b² + X1 * b¹ + X0 * 1  
+$X = X_{n-1} * b^{n-1} + X_{n-2} * b^{n-2} + ... + X_{2} * b^2 + X_{1} * b^1 + X_{0} * b^0$
+
+<!--$\forall x \in X, \quad \exists y \leq \epsilon$-->
 
 Exemplo: 101001 na base 2  
-X = 1*2^5 + 0*2^4 + 1*2^4 + 0*2^3 + 0*2^2 + 0*2^1 + 1*2^0
+$X = 1*{2^5} + 0*{2^4} + 1*{2^4} + 0*{2^3} + 0*{2^2} + 0*{2^1} + 1*{2^0}$
+
 ## Representação de sinal (binário)
 ### Complemento de 2
 | | 0 | 0 | 1 | 0 | 1 | 0 | 1 |
@@ -40,15 +43,15 @@ Relembrar outras formas de representação de números com sinal, em particular:
 ## Números sem sinal (unsigned int)
 menor: 00000...000  
 maior: 11111...111  
-$$ 2^0 + 2^1 + ... + 2^{31} $$
-* A representação com 32 bits vai de 0 a $ 2^{32} - 1 $
+$2^0 + 2^1 + ... + 2^{31}$
+* A representação com 32 bits vai de 0 a $2^{32} - 1$
 <!--
 $$
    f(x,y) = \sin(x+y)
 $$
 -->
 ## Números com sinal (int)
-É possível representar de $ -2^{31} $ a $2^{31} - 1$  
+É possível representar de $-2^{31}$ a $2^{31} - 1$  
 A representação com 32 bits vai de $-2147.483.648$ a $2147.483.647$
 ## Observação 1  
 O MIPS 21 não implementa o long mas a ideia seria usar 2 registradores , o que nos dá:  
