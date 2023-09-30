@@ -1,0 +1,36 @@
+# Voce deve ler 3 inteiros i, j e N e voce deve calcular A[i] = A[j] + N. 
+# Voce pode assumir que o endereco base do vetor A esta no registrador $s0.
+# t0 = i, t1 = j, t2 = N
+# s0 = A[0]
+#.data
+#numi: .word 0
+#numj: .word 0
+#numN: .word 0
+#.text
+#main:
+# ler o i
+li $v0,5
+syscall
+move $t0,$v0
+# ler o j
+li $v0,5
+syscall
+move $t1,$v0
+# ler o N
+li $v0,5
+syscall
+move $t2,$v0
+# encerrar processo
+#li $v0,10
+#syscall
+li $t4,4
+# preciso multiplicar por 4 o valor de j
+mul $t1,$t1,$t4 # t1 = 4j
+add $t1,$t1,$s0 # t1 = s0 + t1
+# t3 = A[j] + N
+lw $t3,0($t1)
+add $t3,$t3,$t2
+# gravar em A[i]
+mul $t0,$t0,$t4
+add $t0,$t0,$s0
+sw $t3,0($t0)

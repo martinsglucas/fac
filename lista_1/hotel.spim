@@ -1,0 +1,40 @@
+.data
+valorDiaria: .word 0 # s0
+aumentoDiaria: .word 0 # s1
+diaChegada: .word 0 # s2
+.text
+main:
+li $v0,5
+syscall # chamada ao sistema para ler um inteiro
+la $s0,valorDiaria
+move $s0,$v0 # valorDiaria recebe o inteiro
+li $v0,5
+syscall # chamada ao sistema para ler um inteiro
+la $s1,aumentoDiaria
+move $s1,$v0 # aumentoDiaria recebe o inteiro
+li $v0,5
+syscall # chamada ao sistema para ler um inteiro
+la $s2, diaChegada
+move $s2,$v0 # diaChegada recebe o inteiro
+# calcular quantidadade de dias de hospedagem
+# reg t0 sera a quantidade de dias
+addi $t0,$t0,32 # t0 sera iniciado com 32
+sub $t0,$t0,$s2 # t0 = 32 - diaChegada, t0 = qtd dias que multiplica o valor da diaria
+# calcular valor da diaria
+# se chegar no dia 2, o valor da diaria e D + A
+# se chegar no dia 3, o valor da diaria e D + 2*A
+# se chegar no dia 4, o valor da diaria e D + 3*A
+# logo, o valor da diaria e igual a D + (diaChegada - 1)*A
+addi $t1,$zero,1 # t1 = 1
+sub $t2,$s2,$t1 # t2 = diaChegada - 1
+mul $s1,$s1,$t2 # s1 = aumentoDiaria*t2
+add $s0, $s0, $s1 # s0 = valorDiaria + s1
+mul $s0, $s0, $t0 # valorDiaria * quantidadeDias
+# por ultimo: imprimir o valor da estadia e encerrar o processo
+li $v0,1
+move $a0, $s0
+syscall
+li $v0,10
+syscall
+
+

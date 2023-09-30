@@ -1,0 +1,20 @@
+.data
+pressaoDesejada: .word 0
+pressaoLida : .word 0
+.text
+main:
+li $v0,5 # ler o primeiro inteiro
+syscall
+la $t0,pressaoDesejada # copiando o endereco para o registrador t0
+move $t0, $v0 # movendo o inteiro lido para o t0
+li $v0, 5 # instrucao para ler outro inteiro
+syscall # ler o proximo inteiro
+la $t1, pressaoLida
+move $t1, $v0 # movendo o inteiro lido para o t1
+sub $s0, $t0, $t1 # s0 = t0 - t1
+li $v0, 1
+move $a0, $s0
+syscall
+li $v0,10
+syscall
+

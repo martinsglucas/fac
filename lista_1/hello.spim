@@ -1,0 +1,10 @@
+.data
+msg: .asciiz "Ola mundo\n"
+.text
+# syscall 4 imprime na tela
+main: li $v0,4
+la $a0, msg
+syscall
+# syscall 10 encerra o processo
+li $v0,10
+syscall
