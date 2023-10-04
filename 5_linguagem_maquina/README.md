@@ -46,7 +46,7 @@ binário de 32 bits
 <div align="center">
 
 ```asm
-addi $t0, $s1, 21
+addi $t0, $s0, 21
 ```
 :arrow_down:
 
@@ -67,7 +67,7 @@ binário de 32 bits
 #### Observação
 No tipo I, uma constante varia de $-2^{15}$ a $2^{15}-1$  
 ### Operações imediatas
-Para operações imediatas, se precisar de uma constante maior, deve-se salvar na memória (.data) e carregar em um registrador usnado `lw`
+Para operações imediatas, se precisar de uma constante maior, deve-se salvar na memória (.data) e carregar em um registrador usando `lw`
 
 Para `sw` e `lw`, explica por que a lógica é end. base + offset
 
