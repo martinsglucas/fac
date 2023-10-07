@@ -12,3 +12,4 @@ Repositório dedicado para a disciplina Fundamentos da Arquitetura de Computador
 
 ---
 
+6. <a href="https://github.com/W4RT1N5/fac/blob/main/6_instrucoes_logicas_condicionais/" target="_blank">Instruções Lógicas e Condionais</a>
