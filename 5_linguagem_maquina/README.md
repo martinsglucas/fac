@@ -64,41 +64,11 @@ addi $t0, $s1, 21
 binário de 32 bits
 </div>
 
-#### Observação
+### Observação
 No tipo I, uma constante varia de $-2^{15}$ a $2^{15}-1$  
 ### Operações imediatas
-Para operações imediatas, se precisar de uma constante maior, deve-se salvar na memória (.data) e carregar em um registrador usnado `lw`
+Para operações imediatas, se precisar de uma constante maior, deve-se salvar na memória (.data) e carregar em um registrador usando `lw`
 
 Para `sw` e `lw`, explica por que a lógica é end. base + offset
 
-<svg id="arrow-down-circle" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/></svg>
-
-
-# Instruções lógicas de deslocamento
-## Deslocamentos (tipo R)
-* esquerda: `sll $t0, $s0, 4` (mnemônico shift left logical) (o 4 é shamt - uma constante apesar de ser do tipo R)  
-*Obs: o 4 é uma constante (é o shamt), apesar de ser do tipo R*  
-*Obs2: $t0 é o rd, $s0 é o rs, o rt é desconsiderado*
-* direita: `srl $st0, $s0, 10` (mnemônico shift right logical)
-## Lógicas
-### AND
-Faz o E lógico bit a bit entre `$s0` e `$s1` e salva em `$t0`
-```asm
-and $t0, $s0, $s1
-```
-### OR
-Faz o OU lógico bit a bit
-```asm
-or $t0, $s0, $s1
-```
-### NOR
-OU lógico bit a bit e salva o resultado negado
-```asm
-nor $t0, $s0, $zero
-```
-### XOR
-XOR lógico bit a bit
-```asm
-xor $t0, $s0, $s1
-```
-
+<!--<svg id="arrow-down-circle" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/></svg>-->
