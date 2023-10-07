@@ -46,7 +46,7 @@ binário de 32 bits
 <div align="center">
 
 ```asm
-addi $t0, $s1, 21
+addi $t0, $s0, 21
 ```
 :arrow_down:
 
