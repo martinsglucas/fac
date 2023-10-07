@@ -1,3 +1,4 @@
+[Voltar à página inicial](https://github.com/W4RT1N5/fac#glossário)
 # Instruções lógicas de deslocamento
 ## Deslocamentos (tipo R)
 * esquerda: `sll $t0, $s0, 4` (mnemônico shift left logical) (o 4 é shamt - uma constante apesar de ser do tipo R)  
