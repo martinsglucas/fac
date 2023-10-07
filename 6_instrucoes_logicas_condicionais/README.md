@@ -83,7 +83,7 @@ j label # jump
 ```
 Desvia o fluxo para o label
 
-# ${\color{red}\text{Observações}}$
+# Observações
 ## Deslocamento relativo ao PC
 label se transforma na quantidade de instruções a partir da instrução que está sendo executada
 
