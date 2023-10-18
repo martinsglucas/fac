@@ -174,12 +174,15 @@ Se os 4 registradores não forem suficientes, pode-se usar a pilha (heap). O `$s
   </tr>
   <tr>
     <td>Dados Estáticos</td>
+    <td></td>
   </tr>
   <tr>
     <td>Texto</td>
+    <td>Código</td>
   </tr>
   <tr>
     <td>Reservado</td>
+    <td></td>
   </tr>
 </table>
 
