@@ -70,7 +70,7 @@ bne $t3, $zero, overflow
 
 `$t1` > $2^{32}$ - `$t2` - 1 ?
 
-Obs: ($2^{32}$ - `$t2`) é o complemento de `$t2` e ($2^{32}$ - `$t2` - 1) é o `%t2` apenas negado 
+Obs: ($2^{32}$ - `$t2`) é o complemento de `$t2` e ($2^{32}$ - `$t2` - 1) é o `$t2` apenas negado 
 
 ```asm
 addu $t0, $t1, $t2
