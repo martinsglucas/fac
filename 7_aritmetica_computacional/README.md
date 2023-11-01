@@ -290,7 +290,7 @@ Como o Q é deslocado à direita a cada iteração. Para melhorar, é possível 
 M: multiplicando, Q: multiplicador, P: produto
 1. P[63...32] = 0 e P[31...0] = Q
 2. Se P[0] = 1, então P[63...32] += M
-3. Descolar P uma casa à direita
+3. Deslocar P uma casa à direita
 4. Se não for a 32ª iteração, voltar ao passo 2
 
 ### Multiplicar 2 x 3: 0010 x 0011
@@ -332,7 +332,7 @@ M: 0010 e Q: 0011
 O algoritmo apresentado funciona apenas para **inteiros sem sinal**. Para multiplicar números com sinal, basta converter os operandos para positivo, executar o algoritmo e aplicar regra de sinal ao final.
 
 ## Instruções no Assembly MIPS
-Calcula a multiplicação e salva o resultaod nos registradores especiais `hi` e `lo`
+Calcula a multiplicação e salva o resultado nos registradores especiais `hi` e `lo`
 
 |hi|lo|
 |:--:|:--:|
