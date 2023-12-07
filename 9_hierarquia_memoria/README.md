@@ -35,4 +35,5 @@ A ideia da memória cache é armazenar cópias dos dados da memória principal d
 
 ### Mapeamento direto
 O mapeamento direto é a forma mais simples de implementar uma memória cache. Neste tipo de mapeamento, cada endereço da memória principal é mapeado em um endereço da memória cache.
+
 ![Alt text](mapeamento_direto.png)
