@@ -1,0 +1,64 @@
+.text
+main:
+# ler um inteiro N
+li $v0, 5
+syscall
+move $s0, $v0 
+
+# alocar o vetor de caracteres do gabarito
+li $v0, 9
+add $a0, $zero, $s0
+syscall
+move $s1, $v0 # s1 = endereço base do gabarito
+
+# alocar o vetor de caracteres da resposta
+li $v0, 9
+add $a0, $zero, $s0
+syscall
+move $s2, $v0 # s2 = endereço base do gabarito
+
+# ler o gabarito
+li $v0, 8
+add $a0, $zero, $s1
+syscall
+# ler a resposta
+li $v0, 8
+add $a0, $zero, $s2
+syscall
+
+# analisar se as respostas são iguais aos gabaritos
+move $t0, $zero # t0 contador
+move $t1, $zero # t1 nota
+loop: slt $t2, $t0, $s0
+beq $t2, $zero, fim
+# carregar um caractere do gabarito
+lb $s3, 0($s1)
+# carregar um caractere da resposta
+lb $s4, 0($s2)
+# ver se são iguais
+bne $s3, $s4, else
+addi $t1, $t1, 1
+else:
+# incrementar o endereço do gabarito
+addi $s1, $s1, 1
+# incrementar o endereço da resposta
+addi $s2, $s2, 1
+# incrementar o contador
+addi $t0, $t0, 1
+
+j loop
+
+fim:
+# printar a nota
+li $v0, 1
+move $a0, $t1
+syscall
+# printar \n
+li $v0, 11
+li $a0, 10
+syscall
+
+
+# encerrar
+li $v0, 10
+syscall

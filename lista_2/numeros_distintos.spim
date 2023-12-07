@@ -1,0 +1,55 @@
+.data
+# reservando um vetor de 10 posicoes e inicializando
+vetor: .word 13,13,13,13,31,31,31,31,31,31
+
+.text
+main:
+
+# carregar um reg com o end base do vetor
+la $s0,vetor  
+# carregar um reg com o tamanho do vetor
+li $s1, 10
+
+move $a0, $s0
+move $a1, $s1
+jal elemDistintos
+# printar a quantidade de inteiros distintos
+move $a0, $v0
+li $v0, 1
+syscall
+li $v0, 11
+li $a0, 10
+syscall
+li $v0, 10
+syscall
+
+# procedimento recebe dois parametros
+    # no registrador $a0, o endereco base de um vetor ordenado de inteiros v
+    # no registrador $a1, a quantidade de elementos de v
+# deve retornar, em $v0, a quantidade de elementos distintos presentes no vetor 
+elemDistintos:
+li $t0, 1 # iterador
+addi $t1, $zero, 1 # num_distintos
+lw $s2,0($a0) # primeiro elemento do vetor
+# pensei em pegar o primeiro e iniciar o num_distintos com 1 e começar o loop a partir do segundo elemento. Se o segundo elemento
+# for igual ao primeiro, nao faz nada. Se for diferente, esse segundo passa a ser meu novo "primeiro" e  num_distintos += 1
+li $t2, 1 # carrega t2 com o segundo elemento do vetor
+loop: slt $t4, $t0, $a1
+beq $t4, $zero, sair
+sll $t3, $t2, 2 # t3 = 4i
+add $t3, $t3, $a0
+lw $s4, 0($t3) # carrega um elemento do vetor
+beq $s2, $s4, else
+move $s2, $s4
+# incrementa a quantidade de numeros distintos
+addi $t1, $t1, 1
+else:
+# incrementa o contador
+addi $t0, $t0, 1
+# desloca uma posicao no vetor
+addi $t2, $t2, 1
+
+j loop
+
+sair: move $v0, $t1
+jr $ra

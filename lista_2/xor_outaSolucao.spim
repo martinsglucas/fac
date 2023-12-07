@@ -1,0 +1,73 @@
+.data
+# Reserva espaço para armazenar a string de entrada
+string: .space 3
+.text
+main:
+# Ler um inteiro N que indica a quantidade de operações e armazena em s0
+li $v0, 5
+syscall
+move $s0, $v0
+
+# alocar um vetor de N posições e armazena endereço em s1
+li $v0, 9
+add $t0, $zero, $s0
+sll $t0, $t0, 2
+move $a0, $t0
+syscall
+move $s1, $v0
+
+# iniciar um contador
+move $t1, $zero
+
+# inciar um loop (i < N) t1 < s0 para ler strings
+ler: slt $t2, $t1, $s0 # verifica se t1 é menor que s0
+beq $t2, $zero, prox # se o resultado da verificação for 0 (t1 >= s0), sai do loop
+# usa um reg com t1 (contador) descolado a esquerda
+sll $t0, $t1, 2
+add $t0, $t0, $s1
+# ler uma string
+li $v0, 8
+la $a0, string
+syscall
+# comparar o primeiro caractere com o último
+# usar t4 e t5
+la $t3, string
+lb $t4, 0($t3)
+lb $t5, 2($t3)
+# if e else
+bne $t4, $t5, else
+li $s2, 1 # se t4 = t5, entao carrega s2 com 1
+j sair # pular o else
+else: li $s2, 2 # se t4 != t5, então carrega s2 com 2
+sair:
+sw $s2, 0($t0) # salva na memória o resultado da xor
+# incrementa o contador
+addi $t1, $t1, 1
+j ler
+
+# reinicializar um contador
+prox: move $t1, $zero
+
+# inciar um loop (i < N) t1 < s0 para printar strings
+printar: slt $t2, $t1, $s0 # verifica se t1 é menor que s0
+beq $t2, $zero, fim # se o resultado da verificação for 0 (t1 >= s0), sai do loop
+# usa um reg com t1 (contador) descolado a esquerda
+sll $t0, $t1, 2
+add $t0, $t0, $s1
+# recuperar da memória o resultado da xor
+lw $t3, 0($t0)
+# printar
+li $v0, 1
+move $a0, $t3
+syscall
+# printar \n
+li $v0, 11
+li $a0, 10
+syscall
+# incrementa o contador
+addi $t1, $t1, 1
+j printar
+
+fim:
+li $v0, 10
+syscall

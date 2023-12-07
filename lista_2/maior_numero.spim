@@ -1,0 +1,25 @@
+.text
+main:
+li $v0, 5
+syscall
+move $s0, $v0 # s0 = N
+move $s1, $zero # s1 = i
+li $s2, -2147483648 # s2 = maior
+while: slt $t0, $s1, $s0
+beq $t0, $zero, exit
+li $v0, 5
+syscall
+move $t1, $v0 # t1 = inteiro
+addi $s1, $s1, 1
+slt $t3, $s2, $t1
+beq $t3, $zero, else
+move $s2, $t1
+else: 
+j while
+exit:
+li $v0, 1
+move $a0, $s2
+syscall
+li $v0, 10
+syscall
+

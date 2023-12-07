@@ -1,0 +1,15 @@
+.data
+# reservando um vetor de 10 posições e inicializando
+vetor: .word 1,1,2,2,5,5,5,5,7,8
+
+.text
+main:
+la $s0, vetor
+lw $s1, 16($s0)
+
+li $v0, 1
+move $a0, $s1
+syscall
+
+li $v0, 10
+syscall

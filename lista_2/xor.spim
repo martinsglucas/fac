@@ -1,0 +1,44 @@
+.data
+# Reserva espaço para armazenar a string de entrada
+string: .space 3
+.text
+main:
+# Ler o inteiro que indica a quantidade de operações
+li $v0, 5
+syscall
+move $t0, $v0
+
+# iniciar um contador
+move $t1, $zero
+
+# inciar um loop (i < N) t1 < t0
+loop: slt $t2, $t1, $t0 # verifica se t1 é menor que t0
+beq $t2, $zero, fim # se o resultado da verificação for 0 (t1 >= t0), sai do loop
+# ler uma string
+li $v0, 8
+la $a0, string
+syscall
+# comparar o primeiro caractere com o último
+# usar t4 e t5
+la $t3, string
+lb $t4, 0($t3)
+lb $t5, 2($t3)
+# if e else
+li $v0, 1 # operação para printar inteiro
+bne $t4, $t5, else
+li $a0, 1 # se t4 = t5, entao carrega a0 com 1
+j sair # pular o else
+else: li $a0, 2 # se t4 != t5, então carrega a0 com 2
+sair:
+syscall # printa a0
+# printar \n
+li $v0, 11
+li $a0, 10
+syscall
+# incrementa o contador
+addi $t1, $t1, 1
+j loop
+
+fim:
+li $v0, 10
+syscall
