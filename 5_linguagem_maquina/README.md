@@ -1,4 +1,4 @@
-[Voltar à página inicial](https://github.com/W4RT1N5/fac#glossário)
+[Voltar à página inicial](https://github.com/martinsglucas/fac#sumário)
 # Representação das instruções em linguagem de máquina
 As instruções em assembly MIPS são traduzidas para binário e seguem 3 formatos padrão: **tipo R**, **tipo I** e **tipo J**
 ## Formato tipo R (3 registradores)

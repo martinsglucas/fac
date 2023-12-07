@@ -1,4 +1,4 @@
-[Voltar à página inicial](https://github.com/W4RT1N5/fac#glossário)
+[Voltar à página inicial](https://github.com/martinsglucas/fac#sumário)
 # Arquitetura de um computador
 Compreende um projeto estrutural de um computador, ou seja, componentes lógicos que determinam seu funcionamento  
 Um sistema computacional atualmente compreende três camadas:

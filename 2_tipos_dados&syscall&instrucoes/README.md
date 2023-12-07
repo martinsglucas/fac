@@ -1,4 +1,4 @@
-[Voltar à página inicial](https://github.com/W4RT1N5/fac#glossário)
+[Voltar à página inicial](https://github.com/martinsglucas/fac#sumário)
 ## Escrevendo um programa em assembly MIPS
 Um programa em assembly MIPS possui o seguinte esqueleto
 ```asm
