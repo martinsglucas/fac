@@ -36,4 +36,34 @@ A ideia da memória cache é armazenar cópias dos dados da memória principal d
 ### Mapeamento direto
 O mapeamento direto é a forma mais simples de implementar uma memória cache. Neste tipo de mapeamento, cada endereço da memória principal é mapeado em um endereço da memória cache.
 
-![Alt text](mapeamento_direto.png)
+![](mapeamento_direto.png)
+ 
+Tamanho da principal: $2^t$  
+Tamanho da cache: $2^n$
+
+Endereço (t bits)
+
+| tag | linha |
+| :--: | :--: |
+| t-n bits | n bits |
+
+![](cache_matriz.png)
+
+>OBS sobre o bit da validade: se o o bit for 0, o bloco de dados é inválido, se for 1, o dado é válido
+
+![](fatia_matriz.png)
+
+Considerando uma memória cache com $2^n$ blocos de $2^b$ bytes, e uma memória principal com $2^t$ bytes, a memória cache deverá ter tamanho:
+
+Tamanho real (em bit) = Qtde de blocos (adimensional) * [1 + tamanho da tag + tamanho do bloco] (em bit)
+ 
+
+**Exemplo:** Qual o tamanho real de uma cache diretamente mapeada, que suporta 16 KiB em blocos de 32 bytes, para uma memória principal de 4 GiB?
+
+1. Quantidade de blocos: $\frac{16KiB}{32B} = \frac{2^4 \times 2^{10}}{2^5}\times\frac{B}{B} = 2^{9}$ blocos
+2. Tamanho da tag: = $t-n-b$  
+bloco = 32B = $2^5$B, então $b=5$, n=9. Logo, tag = 32-9-5 = 18
+
+Tamanho real = $2^9 \times [1 + 18 + 32 \times 8] = 2^9 \times 275\text{ bits} = \frac{2^9\times275}{2^3} = 275\times2^6\text{ B} = \frac{2^6\times275}{2^{10}} = 17,1875 \text{ KiB}$
+
+>Kib = $2^{10}$
