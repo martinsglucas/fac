@@ -45,6 +45,9 @@ Ciclo Fetch :arrow-right: Decode :arrow-right: Execute
 ... aula 29/11 slide aula 3  
 stall / bolhas são os tempos de ociosidade do processador
 
+## Caminho de dados
+
+![](caminho_dados.png)
 
 ## Tabela da controladora
 
@@ -58,14 +61,15 @@ stall / bolhas são os tempos de ociosidade do processador
 | Branch | 0 | 0 | 0 | 1 |
 | RegWrite | 1 | 1 | 0 | 0 |
 
+<!--
 ```mermaid
 graph LR
-    PC -->|+4| PC
-    PC -->|instrução| IR
-    IR -->|opcode| ULA
-    IR -->|rs| ULA
-    IR -->|rt| ULA
-    ULA -->|resultado| Registradores
-    ULA -->|endereço| Memória
-    ULA -->|endereço| PC
-```
+    PC --|+4| PC
+    PC --|instrução| IR
+    IR --|opcode| ULA
+    IR --|rs| ULA
+    IR --|rt| ULA
+    ULA --|resultado| Registradores
+    ULA --|endereço| Memória
+    ULA --|endereço| PC
+```-->

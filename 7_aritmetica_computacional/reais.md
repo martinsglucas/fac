@@ -6,7 +6,7 @@ onde:
 - B é a base numérica da representação
 - E é o expoente
 
-Exemplo: O número $ 3155760000000 = 3,155760 \times 10^12$
+Exemplo: O número $ 3155760000000 = 3,155760 \times 10^{12}$
 
 Em binário, a representação é a mesma, e os números à direita da vírgula são potências negativas de 2. Exemplo: $ 0,1_{2} = 2^{-1} = 0,5_{10}$ ou $5,5_{10} = 101,1_2$
 

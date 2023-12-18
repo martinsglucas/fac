@@ -513,7 +513,7 @@ Resto: **0001** | **0011**
 1. Resto = Dividendo. i = 1
 2. Desloque o resto 1 bit à esquerda
 3. Resto[63...32] -= Divisor
-    - Se o resto < 0, restaure o valor do resto e desloque e desloque 1 bit à esquerda
+    - Se o resto < 0, restaure o valor do resto e desloque 1 bit à esquerda
     Se o resto >= 0, desloque o resto 1 bit à esquerda e defina Resto[0] = 1
 4. Se i <= 32, i++ e volte ao passo 3
 5. Desloque Resto[63...32] 1 bit à direita
